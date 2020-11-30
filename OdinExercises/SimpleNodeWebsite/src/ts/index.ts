@@ -10,7 +10,7 @@ const getForIndexPagePath = (indexPath: string) => {
         result.sendFile(path.resolve(__dirname, '../html/index.html'));
     });
 };
-    
+
 indexPagePaths.forEach(indexPath => getForIndexPagePath(indexPath));
 
 app.get('/about.html', (request, result) => {
@@ -19,6 +19,10 @@ app.get('/about.html', (request, result) => {
 
 app.get('/contact-me.html', (request, result) => {
     result.sendFile(path.resolve(__dirname, '../html/contact-me.html'));
+});
+
+app.get('*', (request, result) => {
+    result.status(404).sendFile(path.resolve(__dirname, '../html/404.html'));
 });
 
 app.listen(port);
