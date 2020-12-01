@@ -4,7 +4,7 @@ import * as path from 'path';
 const app = express();
 const port = 8080;
 
-const indexPagePaths = ['/', '/index.html'];
+const indexPagePaths = ['/', '/index'];
 const getForIndexPagePath = (indexPath: string) => {
     app.get(indexPath, (request, result) => {
         result.sendFile(path.resolve(__dirname, '../html/index.html'));
@@ -13,11 +13,11 @@ const getForIndexPagePath = (indexPath: string) => {
 
 indexPagePaths.forEach(indexPath => getForIndexPagePath(indexPath));
 
-app.get('/about.html', (request, result) => {
+app.get('/about', (request, result) => {
     result.sendFile(path.resolve(__dirname, '../html/about.html'));
 });
 
-app.get('/contact-me.html', (request, result) => {
+app.get('/contact-me', (request, result) => {
     result.sendFile(path.resolve(__dirname, '../html/contact-me.html'));
 });
 
