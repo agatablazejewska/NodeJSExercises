@@ -21,7 +21,7 @@ app.get('/contact-me', (request, result) => {
     result.sendFile(path.resolve(__dirname, '../html/contact-me.html'));
 });
 
-app.get('*', (request, result) => {
+app.use((request, result) => {
     result.status(404).sendFile(path.resolve(__dirname, '../html/404.html'));
 });
 
