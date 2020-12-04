@@ -13,7 +13,9 @@
     "nodemon": "nodemon"
   },
   "dependencies": {
+    "@types/body-parser": "^1.19.0",
     "@types/express": "^4.17.9",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "glob": "^7.1.6"
   },
@@ -32,12 +34,13 @@
   },
   "nodemonConfig": {
     "watch": [
-      "OdinExercises/**/*.ts"
+      "OdinExercises/**/*.ts",
+      "AcademindNodeJSCourse/**/*.ts"
     ],
     "ignore": [
       "src/**/*.spec.ts"
     ],
-    "exec": "npx ts-node OdinExercises/SimpleNodeWebsite/src/ts/index.ts",
+    "exec": "npx ts-node AcademindNodeJSCourse/app.ts",
     "execMap": {
       "ts": "ts-node"
     },

@@ -1,9 +1,11 @@
 const path = require('path');
 const OdinSimpleNodeWebsitePathPrefix = `./OdinExercises/SimpleNodeWebsite/src/ts/`;
+const AcademindNodeJsCoursePathPrefix = './AcademindNodeJSCourse/';
 
 const config = {
   entry: {
-    OdinSimpleNodeWebsite_Index: `${OdinSimpleNodeWebsitePathPrefix}index.ts`
+    OdinSimpleNodeWebsite_Index: `${OdinSimpleNodeWebsitePathPrefix}index.ts`,
+    AcademindNodeJsCourse_app: `${AcademindNodeJsCoursePathPrefix}app.ts`,
   },
   output: {
     path: path.join(__dirname, 'dist'),
