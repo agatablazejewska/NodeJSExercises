@@ -5,13 +5,9 @@ const app = express();
 const port = 8080;
 
 const indexPagePaths = ['/', '/index'];
-const getForIndexPagePath = (indexPath: string) => {
-    app.get(indexPath, (request, result) => {
-        result.sendFile(path.resolve(__dirname, '../html/index.html'));
-    });
-};
-
-indexPagePaths.forEach(indexPath => getForIndexPagePath(indexPath));
+app.get(indexPagePaths, (request, result) => {
+    result.sendFile(path.resolve(__dirname, '../html/index.html'));
+});
 
 app.get('/about', (request, result) => {
     result.sendFile(path.resolve(__dirname, '../html/about.html'));
