@@ -17,7 +17,7 @@ app.use('/admin', adminData.router);
 app.use(shopData.router);
 
 app.use((req, res, next) => {
-    res.status(404).sendFile(path.resolve(__dirname, './views/404Page.html'));
+    res.status(404).render('404Page');
 });
 
 app.listen(port);

@@ -7,7 +7,7 @@ export const router = express.Router();
 export const products: Product[] = [];
 
 router.get('/add-product', (req, res, next) => {
-    res.sendFile(path.resolve(__dirname, '../views/add-product.html'));
+    res.render('add-product');
 });
 
 router.post('/add-product', (req, res, next) => {
